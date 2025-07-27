@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-07-27T02:34:52.033Z",
+  "source": "ZachXBT Telegram (@investigations)",
+  "alertCount": 3,
+  "alerts": [
+    {
+      "id": "zachxbt-1753580092033",
+      "date": "2025-07-27T01:34:52.033Z",
+      "content": "🚨 Investigation Update: The \"DeFi Yield Protocol\" has executed an exit scam, draining $4.2M from liquidity pools. Team wallets are moving funds through Tornado Cash. Contract: 0xabc...123. Multiple victims confirmed. Tracking wallets: [Thread continues...]",
+      "link": "https://t.me/investigations",
+      "severity": "high",
+      "keywords": [
+        "exit scam"
+      ]
+    },
+    {
+      "id": "zachxbt-1753576492033",
+      "date": "2025-07-27T00:34:52.033Z",
+      "content": "⚠️ SCAM ALERT: New phishing site impersonating OpenSea is ranking high on Google. Already 73 wallets drained totaling $890K. Site uses similar URL with unicode characters. Never click Google ads for crypto sites. Bookmark official URLs only.",
+      "link": "https://t.me/investigations",
+      "severity": "high",
+      "keywords": [
+        "drained",
+        "phishing"
+      ]
+    },
+    {
+      "id": "zachxbt-1753572892033",
+      "date": "2025-07-26T23:34:52.033Z",
+      "content": "📊 Research Thread: Tracking the recent Arbitrum bridge exploit. $2.3M stolen through reentrancy attack. Hacker wallet 0x742...abc is splitting funds across multiple chains. Previous similar attacks linked to North Korean groups. Full analysis: [1/12]",
+      "link": "https://t.me/investigations",
+      "severity": "high",
+      "keywords": [
+        "hack",
+        "exploit",
+        "stolen"
+      ]
+    }
+  ],
+  "lastChecked": "2025-07-27T02:34:52.033Z",
+  "dataSource": "sample"
+}

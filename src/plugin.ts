@@ -2,6 +2,10 @@ import type { Plugin } from '@elizaos/core';
 import trendingCoinsAction from './trending-action';
 import { marketSummaryAction } from './market-summary-action';
 import { securityCheckAction } from './security-check-action';
+import { marketAnalysisAction, getCachedMarketAnalysisAction } from './market-analysis-action';
+import { zachxbtFetcherAction } from './zachxbt-fetcher';
+import * as fs from 'fs/promises';
+import * as path from 'path';
 import {
   type Action,
   type ActionResult,
@@ -172,6 +176,8 @@ const helloWorldProvider: Provider = {
   },
 };
 
+import { SchedulerService } from './scheduler-service';
+
 export class StarterService extends Service {
   static serviceType = 'starter';
   capabilityDescription =
@@ -270,6 +276,93 @@ const plugin: Plugin = {
         });
       },
     },
+    // Add API routes
+    {
+      name: 'marketAnalysis',
+      path: '/api/market-analysis',
+      type: 'GET',
+      handler: async (req: any, res: any) => {
+        try {
+          const analysisPath = path.join(process.cwd(), 'data', 'market-reports', 'latest.json');
+          const data = await fs.readFile(analysisPath, 'utf-8');
+          const analysis = JSON.parse(data);
+          res.json({ success: true, data: analysis });
+        } catch (error) {
+          res.json({
+            success: true,
+            data: {
+              timestamp: new Date().toISOString(),
+              summary: 'Market analysis will be available after the next scheduled update',
+              analysis: 'The bot runs comprehensive market analysis twice daily at 8 AM and 8 PM UTC. Check back soon!',
+              topCoins: []
+            }
+          });
+        }
+      }
+    },
+    {
+      name: 'scamAlerts',
+      path: '/api/scam-alerts',
+      type: 'GET',
+      handler: async (req: any, res: any) => {
+        try {
+          const alertsPath = path.join(process.cwd(), 'data', 'scam-alerts', 'zachxbt-posts.json');
+          const data = await fs.readFile(alertsPath, 'utf-8');
+          const alerts = JSON.parse(data);
+          res.json({ success: true, data: alerts });
+        } catch (error) {
+          res.json({
+            success: true,
+            data: {
+              timestamp: new Date().toISOString(),
+              source: 'ZachXBT Telegram',
+              alertCount: 0,
+              alerts: []
+            }
+          });
+        }
+      }
+    },
+    {
+      name: 'dashboard',
+      path: '/api/dashboard',
+      type: 'GET',
+      handler: async (req: any, res: any) => {
+        try {
+          const [marketData, alertData] = await Promise.all([
+            fs.readFile(path.join(process.cwd(), 'data', 'market-reports', 'latest.json'), 'utf-8')
+              .then(data => JSON.parse(data))
+              .catch(() => null),
+            fs.readFile(path.join(process.cwd(), 'data', 'scam-alerts', 'zachxbt-posts.json'), 'utf-8')
+              .then(data => JSON.parse(data))
+              .catch(() => null)
+          ]);
+          
+          res.json({
+            success: true,
+            data: {
+              market: marketData || {
+                timestamp: new Date().toISOString(),
+                summary: 'Market analysis pending...',
+                analysis: 'Next update at 8 AM/PM UTC',
+                topCoins: []
+              },
+              alerts: alertData || {
+                timestamp: new Date().toISOString(),
+                alertCount: 0,
+                alerts: []
+              },
+              lastUpdate: new Date().toISOString()
+            }
+          });
+        } catch (error) {
+          res.status(500).json({
+            success: false,
+            error: 'Failed to fetch dashboard data'
+          });
+        }
+      }
+    }
   ],
   events: {
     [TELEGRAM_SLASH_START]: [
@@ -315,8 +408,16 @@ Drop me a GM or tell me what's on your mind. Let's navigate this digital storm t
       },
     ],
   },
-  services: [StarterService],
-  actions: [telegramStartAction, trendingCoinsAction, marketSummaryAction, securityCheckAction], // Custom actions
+  services: [StarterService, SchedulerService],
+  actions: [
+    telegramStartAction, 
+    trendingCoinsAction, 
+    marketSummaryAction, 
+    securityCheckAction,
+    marketAnalysisAction,
+    getCachedMarketAnalysisAction,
+    zachxbtFetcherAction
+  ], // Custom actions
   providers: [helloWorldProvider],
 };
 

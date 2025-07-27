@@ -1,0 +1,195 @@
+{
+  "timestamp": "2025-07-27T02:34:44.280Z",
+  "summary": "BTC: $118233 (+0.44%) | ETH: $3769 (+0.44%) | Total Market Cap: $3.83T | 24h Volume: $216.84B",
+  "analysis": "📊 **Market Overview - 7/26/2025**\n\nThe cryptocurrency market shows a total capitalization of $3.83T with $216.84B in 24-hour trading volume.\n\n**Major Cryptocurrencies:**\n\n🔸 **Bitcoin (BTC)**: $118233\n   • 24h Change: +0.44%\n   • 7d Change: +0.27%\n   • Market Dominance: 60.45%\n   • 24h Volume: $47.79B\n\n🔸 **Ethereum (ETH)**: $3769\n   • 24h Change: +0.44%\n   • 7d Change: +4.26%\n   • Market Dominance: 11.69%\n   • 24h Volume: $24.34B\n\n**Top Large Cap Altcoins:**\n• **XRP (XRP)**: $3.19 (+1.51%)\n• **Tether USDt (USDT)**: $1.00 (+0.04%)\n• **BNB (BNB)**: $795.50 (+1.64%)\n• **Solana (SOL)**: $186.25 (+0.03%)\n• **USDC (USDC)**: $0.9999 (+0.01%)\n\n**Market Sentiment:**\n🟡 Neutral - Mixed signals with sideways movement\n\n**Top 5 Trending (24h Gainers):**\n1. **Flare (FLR)**: +10.72% • Price: $0.0253\n2. **Immutable (IMX)**: +8.40% • Price: $0.6153\n3. **Cronos (CRO)**: +8.07% • Price: $0.1429\n4. **Hedera (HBAR)**: +7.93% • Price: $0.2869\n5. **Ethereum Name Service (ENS)**: +6.00% • Price: $31.01\n\n*Data sourced from CoinMarketCap • Updated: 7:34:44 PM*",
+  "topCoins": [
+    "FLR (+10.7%)",
+    "IMX (+8.4%)",
+    "CRO (+8.1%)",
+    "HBAR (+7.9%)",
+    "ENS (+6.0%)",
+    "INJ (+5.9%)",
+    "SUI (+5.1%)",
+    "MNT (+5.0%)",
+    "PENGU (+4.5%)",
+    "ENA (+4.3%)"
+  ],
+  "marketData": {
+    "btc": {
+      "price": 118232.53010674856,
+      "volume_24h": 47785953262.33888,
+      "volume_change_24h": -50.6949,
+      "percent_change_1h": 0.02111729,
+      "percent_change_24h": 0.43706139,
+      "percent_change_7d": 0.27474016,
+      "percent_change_30d": 10.23242518,
+      "percent_change_60d": 8.83738021,
+      "percent_change_90d": 26.33956862,
+      "market_cap": 2352586036530.3486,
+      "market_cap_dominance": 60.4488,
+      "fully_diluted_market_cap": 2482883132241.72,
+      "tvl": null,
+      "last_updated": "2025-07-27T02:33:00.000Z"
+    },
+    "eth": {
+      "price": 3769.0112820193954,
+      "volume_24h": 24339509779.0968,
+      "volume_change_24h": -36.4267,
+      "percent_change_1h": 0.08098401,
+      "percent_change_24h": 0.43933019,
+      "percent_change_7d": 4.25946684,
+      "percent_change_30d": 54.95458504,
+      "percent_change_60d": 43.52207884,
+      "percent_change_90d": 112.65408644,
+      "market_cap": 454960886850.84357,
+      "market_cap_dominance": 11.6901,
+      "fully_diluted_market_cap": 454960886850.84,
+      "tvl": null,
+      "last_updated": "2025-07-27T02:33:00.000Z"
+    },
+    "largeCaps": [
+      {
+        "symbol": "XRP",
+        "name": "XRP",
+        "price": 3.1939235237295214,
+        "percent_change_24h": 1.51436023,
+        "market_cap": 189206900899.3995
+      },
+      {
+        "symbol": "USDT",
+        "name": "Tether USDt",
+        "price": 1.000268945946055,
+        "percent_change_24h": 0.03706972,
+        "market_cap": 163617207682.95737
+      },
+      {
+        "symbol": "BNB",
+        "name": "BNB",
+        "price": 795.4954821441984,
+        "percent_change_24h": 1.64397883,
+        "market_cap": 110803471289.04591
+      },
+      {
+        "symbol": "SOL",
+        "name": "Solana",
+        "price": 186.24696854347738,
+        "percent_change_24h": 0.03227648,
+        "market_cap": 100281221665.10611
+      },
+      {
+        "symbol": "USDC",
+        "name": "USDC",
+        "price": 0.9998693316363563,
+        "percent_change_24h": 0.01436,
+        "market_cap": 64294678272.61731
+      },
+      {
+        "symbol": "DOGE",
+        "name": "Dogecoin",
+        "price": 0.23818600001119447,
+        "percent_change_24h": 0.26463964,
+        "market_cap": 35790558731.351326
+      },
+      {
+        "symbol": "TRX",
+        "name": "TRON",
+        "price": 0.3205927951063576,
+        "percent_change_24h": 0.98310623,
+        "market_cap": 30369342778.534027
+      },
+      {
+        "symbol": "ADA",
+        "name": "Cardano",
+        "price": 0.8272150270524891,
+        "percent_change_24h": 0.51518914,
+        "market_cap": 29290437259.36658
+      },
+      {
+        "symbol": "HYPE",
+        "name": "Hyperliquid",
+        "price": 43.362289300311154,
+        "percent_change_24h": -1.91402745,
+        "market_cap": 14479890346.686377
+      },
+      {
+        "symbol": "SUI",
+        "name": "Sui",
+        "price": 4.168259429879573,
+        "percent_change_24h": 5.06590488,
+        "market_cap": 14401399907.933138
+      }
+    ],
+    "trending": [
+      {
+        "symbol": "FLR",
+        "name": "Flare",
+        "price": 0.025263019230062963,
+        "percent_change_24h": 10.72008466,
+        "volume_24h": 35461031.2425556
+      },
+      {
+        "symbol": "IMX",
+        "name": "Immutable",
+        "price": 0.6153337845548442,
+        "percent_change_24h": 8.39989836,
+        "volume_24h": 64648407.09695157
+      },
+      {
+        "symbol": "CRO",
+        "name": "Cronos",
+        "price": 0.1428906913594558,
+        "percent_change_24h": 8.07486265,
+        "volume_24h": 41178747.94607929
+      },
+      {
+        "symbol": "HBAR",
+        "name": "Hedera",
+        "price": 0.28688792606856284,
+        "percent_change_24h": 7.93368296,
+        "volume_24h": 1079353472.98966
+      },
+      {
+        "symbol": "ENS",
+        "name": "Ethereum Name Service",
+        "price": 31.012607818818342,
+        "percent_change_24h": 5.99779131,
+        "volume_24h": 280265634.18659264
+      },
+      {
+        "symbol": "INJ",
+        "name": "Injective",
+        "price": 14.9628427321621,
+        "percent_change_24h": 5.91034579,
+        "volume_24h": 134448879.49290588
+      },
+      {
+        "symbol": "SUI",
+        "name": "Sui",
+        "price": 4.168259429879573,
+        "percent_change_24h": 5.06590488,
+        "volume_24h": 2124526981.4078646
+      },
+      {
+        "symbol": "MNT",
+        "name": "Mantle",
+        "price": 0.8027348421055449,
+        "percent_change_24h": 4.96922713,
+        "volume_24h": 235223588.23392254
+      },
+      {
+        "symbol": "PENGU",
+        "name": "Pudgy Penguins",
+        "price": 0.04268520448285801,
+        "percent_change_24h": 4.51518053,
+        "volume_24h": 1588254655.4652772
+      },
+      {
+        "symbol": "ENA",
+        "name": "Ethena",
+        "price": 0.6213183713934831,
+        "percent_change_24h": 4.30673279,
+        "volume_24h": 1203573787.5437427
+      }
+    ]
+  }
+}
