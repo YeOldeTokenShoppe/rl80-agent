@@ -1,5 +1,7 @@
 import type { Plugin } from '@elizaos/core';
 import trendingCoinsAction from './trending-action';
+import { marketSummaryAction } from './market-summary-action';
+import { securityCheckAction } from './security-check-action';
 import {
   type Action,
   type ActionResult,
@@ -314,7 +316,7 @@ Drop me a GM or tell me what's on your mind. Let's navigate this digital storm t
     ],
   },
   services: [StarterService],
-  actions: [telegramStartAction, trendingCoinsAction], // Custom actions
+  actions: [telegramStartAction, trendingCoinsAction, marketSummaryAction, securityCheckAction], // Custom actions
   providers: [helloWorldProvider],
 };
 
