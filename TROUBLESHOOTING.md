@@ -220,3 +220,101 @@ If issues persist:
 3. Try with a minimal configuration
 4. Check the ElizaOS documentation
 5. Report issues with full error logs
+
+
+
+
+## Google Cloud Server Updates
+
+### 1. First, commit and push your local changes:
+
+```bash
+# On your local machine
+cd /Users/michellepaulson/rl80-agent-v3/rl80-agent
+git add .
+git commit -m "Your commit message"
+git push origin main
+```
+
+### 2. SSH into your Google Cloud instance:
+
+```bash
+# Using gcloud command (recommended)
+gcloud compute ssh rl80-bot --zone=us-central1-a
+```
+
+### 3. Once logged into the server, update the code:
+
+```bash
+# Navigate to your project directory
+cd ~/apps/rl80-agent
+
+# Check current PM2 status
+pm2 status
+
+# If you have local changes conflicting with remote:
+git stash  # Save local changes temporarily
+
+# Fetch and pull latest changes
+git fetch --all
+git pull origin main
+
+# Install any new dependencies
+bun install
+
+# Restart the bot
+pm2 restart rl80-bot
+
+# Check logs to ensure it's running
+pm2 logs rl80-bot --lines 50
+
+# Save PM2 configuration
+pm2 save
+```
+
+### 4. Verify everything is working:
+
+```bash
+# Check bot status
+pm2 status
+
+# Monitor in real-time
+pm2 monit
+
+# Check if new features started (scheduler, market analysis)
+pm2 logs rl80-bot | grep -i "scheduler\|market analysis"
+
+# Check for errors
+pm2 logs rl80-bot --err --lines 50
+```
+
+### Quick one-liner to update:
+
+```bash
+cd ~/apps/rl80-agent && git stash && git pull origin main && bun install && pm2 restart rl80-bot && pm2 logs rl80-bot --lines 30
+
+
+
+
+
+
+
+## The SSH hanging issue is back. This often means the instance is having resource issues. Let's restart the instance:
+
+  # Stop the instance
+  gcloud compute instances stop rl80-bot --zone=us-central1-a --project=hailmary-3ff6c
+
+  # Wait 30 seconds, then start it
+  gcloud compute instances start rl80-bot --zone=us-central1-a --project=hailmary-3ff6c
+
+  # Wait 2 minutes for it to fully boot, then try SSH again
+  gcloud compute ssh rl80-bot --zone=us-central1-a --project=hailmary-3ff6c
+
+  If SSH still hangs after restart, try the browser-based SSH:
+  1. Go to https://console.cloud.google.com
+  2. Select project "hailmary-3ff6c"
+  3. Navigate to Compute Engine → VM instances
+  4. Click the "SSH" button next to "rl80-bot"
+
+  The browser SSH sometimes works when command-line SSH fails. This pattern of the bot dying and SSH hanging suggests the e2-micro instance (1GB RAM) might be running out
+  of memory. We need to get that monitoring set up ASAP to auto-restart before it gets to this state!

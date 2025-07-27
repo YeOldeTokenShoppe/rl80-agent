@@ -15,12 +15,12 @@ export const character: Character = {
     '@elizaos/plugin-discord',
     '@elizaos/plugin-telegram',
     '@elizaos/plugin-coinmarketcap',
-    // '@elizaos/plugin-twitter',     // Temporarily disabled due to rate limits
-    // '@elizaos/plugin-web-search', // Uncomment after installing
+    '@elizaos/plugin-twitter',     // Temporarily disabled due to rate limits
+    '@elizaos/plugin-web-search', // Uncomment after installing
   ],
   settings: {
     secrets: {
-      "TELEGRAM_BOT_TOKEN":"6758948908:AAGW_yknWXLUn5IqoppwlQsPrf3gGE8i0yo"
+      // Tokens will be loaded from environment variables
     },
     voice: {
       model: 'en_US-female-medium'
